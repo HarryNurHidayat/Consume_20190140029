@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta
+      name="google-signin-client_id"
+      content="385284254918-s1sdqmqet59802a81u5v42jg8gksabqn.apps.googleusercontent.com"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script src="jquery.js"></script>
+    <script src="index.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>Home</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+        <a class="navbar-brand" href="#">Welcome to my pleasure business</a>
+        <ul class="navbar-nav ml-auto">
+            <div class="navbar-nav ms-auto" data-onsuccess="onSignIn">
+                <div id="user" class="mt-4"></div>
+            <div class="topbar-divider d-none d-sm-block"></div>
+            <li class="nav-item">
+                <a class="nav-link" href="index.html" onclick="signOut();" id="" role=" button" data-toggle=""
+                    aria-haspopup="true"
+                    aria-expanded="false">
+                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">Logout</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <!-- End Nav -->
+        <div id="content" class="container-fluid">
+        
+        <!-- Tabel -->
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Data Planet Pizza</h6>
+            </div>
+            <div class="card-body">
+                <a href="Add.html" class="btn btn-primary mb-3"><i class="fa fa-plus"></i> Tambah Data</a>
+                <form class="row g-3">
+                    <div class="col-sm-3">
+                        <input type="text" onkeyup="tableSearch()" class="form-control mb-3" id="cari"
+                            placeholder="Carilah Sendiri... "  autocomplete="off">
+                    </div>
+                </form>
+                
+                <div class="table-responsive">
+                    <table id="Tabel" class="table table-bordered table-hover">
+                            <tr>
+                                <th>ID</th>
+                                <th>Nama</th>
+                                <th>Harga</th>
+                                <th>Deskripsi</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <script src="./index.js"></script>
+    <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+        function signOut() {
+            var auth2 = gapi.auth2.getAuthInstance();
+            console.log(gapi.auth2);
+            auth2.signOut().then(function () {
+                    alert("Anda Berhasil Logout");
+                    window.location.href = "/";
+                })
+                .catch(error => {
+                    console.log(error)
+                });
+        }
+    </script>
+  </body>
+</html>

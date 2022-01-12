@@ -20,8 +20,17 @@
   </head>
 
   <body>
-    <h5 class="alert btn-custome">Sign-In With Google</h5>
-    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+    <div class="container mt-lg-5 w-25 shadow p-5 mb-5 bg-body rounded">
+      <form>
+        <div class="">
+          <h5 class="text-center">Welcome to Pizza Planet</h5>
+          <h6 class="text-center">Login for your identity</h6>
+          <div class="row justify-content-md-center">
+            <div class="g-signin2 mt-4" data-onsuccess="onSignIn"></div>
+          </div>
+        </div>
+      </form>
+    </div>
 
     <script src="index.js" async defer></script>
     <script src="https://apis.google.com/js/platform.js" async defer></script>

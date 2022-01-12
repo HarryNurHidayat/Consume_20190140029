@@ -3,7 +3,7 @@ function onSignIn(googleUser) {
   localStorage.setItem("nama", profile.getName());
   localStorage.setItem("image", profile.getImageUrl());
   localStorage.setItem("email", profile.getEmail());
-  window.location.href = "/access.html";
+  window.location.href = "/Home.html";
 }
 
 function onLoad() {
